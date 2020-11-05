@@ -41,9 +41,10 @@ jobs:
       cache:
         directories:
           - ./node_modules
-
-      install:
+      before_script:
+        - cd frontend
         - npm install
+        - npm run build
       script:
         - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
