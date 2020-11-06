@@ -19,7 +19,7 @@ jobs:
         - php artisan migrate
         - php artisan db:seed
       after_success:
-        - git push https://github.com/epeter95/tick-it-easy.git HEAD:main
+        - git push git@github.com:epeter95/tick-it-easy.git HEAD:main
       deploy:
         provider: pages
         skip_cleanup: true
