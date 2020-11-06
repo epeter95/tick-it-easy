@@ -21,13 +21,16 @@ jobs:
       after_success:
         - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
         - git fetch --all --prune
-        - git push git@github.com:epeter95/tick-it-easy.git HEAD:main
+        - git push origin main
       deploy:
-        provider: pages
+        provider: heroku
         skip_cleanup: true
-        keep_history: true
+        api_key:
+            secure: 54e9fe46-1d34-490a-9fc5-198ae68a1090
+        app: tick-it-easy-backend
         on:
           branch: main
+
     - language: node_js
       node_js:
         - '12'
