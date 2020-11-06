@@ -19,10 +19,7 @@ jobs:
         - php artisan migrate
         - php artisan db:seed
       after_success:
-        - git fetch --all --prune
-        - git checkout main
-        - git pull origin develop
-        - git push origin main
+        - git branch
       deploy:
         provider: pages
         skip_cleanup: true
