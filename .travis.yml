@@ -21,8 +21,8 @@ jobs:
       after_success:
         - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
         - git fetch --all --prune
-        - git checkout main
-        - git merge develop
+        - git pull --rebase main
+        - git push main
       deploy:
         provider: pages
         skip_cleanup: true
