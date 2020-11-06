@@ -19,6 +19,7 @@ jobs:
         - php artisan migrate
         - php artisan db:seed
       after_success:
+        - git fetch --all --prune
         - git branch
       deploy:
         provider: pages
