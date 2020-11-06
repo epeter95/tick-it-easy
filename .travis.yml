@@ -21,8 +21,7 @@ jobs:
       after_success:
         - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
         - git fetch --all --prune
-        - git pull --rebase main
-        - git push main
+        - git push git@github.com:epeter95/tick-it-easy.git HEAD:main
       deploy:
         provider: pages
         skip_cleanup: true
