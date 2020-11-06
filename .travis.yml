@@ -19,13 +19,14 @@ jobs:
         - php artisan migrate
         - php artisan db:seed
       after_success:
-        - git push git@github.com:epeter95/tick-it-easy.git HEAD:main
+        - git checkout main
+        - git merge develop
       deploy:
         provider: pages
         skip_cleanup: true
         keep_history: true
         on:
-          branch: master
+          branch: main
     - language: node_js
       node_js:
         - '12'
